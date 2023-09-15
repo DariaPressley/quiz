@@ -9,25 +9,36 @@
 </head>
 
 <body>
-    <header class="instructions">
+
+<header class="instructions">
         <h1>Coding Quiz Challenge</h1>
-    </header>
+    
     <div class="instructions">
         <p>Try to answer the following code-related questions within the time limit.</p>
-        <p>Keep in mind that incorreect answers will penalize your score/time by ten seconds!</p>
+        <p>Keep in mind that incorreect answers will subtract ten seconds from your remaining time!</p>
     </div>
+
     <div class="container">
         <button class="center-button" id="startbutton">START MY QUIZ</button>
     </div>
 
+</header>
+
+<main>
+
     <div id="quiz-container">
+        <h1 class="time" style="text-align:left;"></h1>
         <div id="question"></div>
         <div id="answer"></div>
     </div>
+
     <div id="result-container">
         <p id="score"></p>
     </div>
+    
+</main>
 
- <script src="./script.js"></script>
+ 
+<script src="./script.js"></script>
 </body>
 </html>

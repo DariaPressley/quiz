@@ -4,6 +4,8 @@ var optionsElement = document.getElementById("answer");
 var resultContainer = document.getElementById("result-container");
 var scoreElement = document.getElementById("score");
 var instructions = document.getElementsByClassName("instructions"); 
+var timeEl = document.querySelector(".time");
+var mainEl = document.getElementById("main");
 var quizQuestion= [questionOne, questionTwo, questionThree, questionFour, questionFive]
 
 var questionOne = {question:"What does API stand for?",
@@ -36,6 +38,18 @@ startButton.addEventListener('click', function () {
 
 function startQuiz() {
     startButton.style.display = "none";
-    instructions.style.display= "none";
-    displayQuestion();
+    startTimer();
+    questionElement.display (questionOne)
 }
+
+var secondsLeft = 60
+function startTimer() {
+  var timerInterval = setInterval(function() {
+    secondsLeft--;
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+      sendMessage();
+    }
+}, 1000);
+}
+
