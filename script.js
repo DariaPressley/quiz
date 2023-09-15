@@ -39,13 +39,14 @@ startButton.addEventListener('click', function () {
 function startQuiz() {
     startButton.style.display = "none";
     startTimer();
-    questionElement.display (questionOne)
+    //questionElement.display (questionOne)
 }
 
 var secondsLeft = 60
 function startTimer() {
   var timerInterval = setInterval(function() {
     secondsLeft--;
+    timeEl.textContent= secondsLeft;
     if(secondsLeft === 0) {
       clearInterval(timerInterval);
       sendMessage();
