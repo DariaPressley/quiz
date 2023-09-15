@@ -2,23 +2,25 @@
 
 ## Description
 
-This page generates a coding quiz challenge for users to test their skills in five timed questions.
+This page generates a coding quiz challenge for users to test their skills in five timed questions so that they can gage their progress.
 
 ## Acceptance Criteria
 
 It is done when...
 
-When the user clicks the button to generate a password.
+The user is presented qith a quiz and when they click the start button, they are subsequentially presented with a question.
 
-They are presented with a series of prompts for password criteria.
+The timer starts on the first question.
 
-They select which criteria to include in the password - length of characters, character types, and special characters.
+Once the user answers one question, they are presented with another until the quiz is finished.
 
-The user answers each prompt and at least one character type is selected from the desired prompts.
+If the user answers incorrectly, time is subtracted from the clock.
 
-All prompts are answered and a password is generated that matches the selected criteria.
+When all questions are answered or the timer reaches 0, the game is over and the user can save their initial score.
 
-The password is generated and displayed in an alert or written to the page
+## Page
+
+https://dariapressley.github.io/quiz/
 
 ## Credits
 
