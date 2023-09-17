@@ -24,7 +24,7 @@ https://dariapressley.github.io/quiz/
 
 ## Credits
 
-Eric Sayer (UCLA Tutor) for help with Javascript.
+Eric Sayer (UCLA Tutor) for overall guidance with Javascript.
 
 ## License
 

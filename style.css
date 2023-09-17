@@ -31,5 +31,7 @@ h1 {
 #answer {
     display: flex;
     flex-direction: column;
+    padding: 20px;
 }
+
 

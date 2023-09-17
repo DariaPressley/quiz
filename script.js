@@ -6,6 +6,7 @@ var scoreElement = document.getElementById("score");
 var instructions = document.querySelector(".instructions");
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
+var userName = document.getElementById ("name");
 
 var questions = [{
   question: "What does API stand for?",
@@ -106,5 +107,15 @@ optionsElement.addEventListener("click", function (event) {
 function endGame() {
   clearInterval(timerInterval);
   console.log("game ended");
+  quizContainer.innerHTML="";
+  updateRemainingSeconds();
 }
+
+function updateRemainingSeconds() {
+  var elapsedTimeInSeconds = secondsLeft - secondsRemaining;
+  updateRemainingSeconds= totalTimeInSeconds - elapsedTimeInSeconds;
+
+  console.log (updateRemainingSeconds)
+}
+
 
