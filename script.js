@@ -6,7 +6,7 @@ var scoreElement = document.getElementById("score");
 var instructions = document.querySelector(".instructions");
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
-var userName = document.getElementById ("name");
+var formEl = document.getElementById("form");
 
 var questions = [{
   question: "What does API stand for?",
@@ -58,19 +58,19 @@ function displayQuestion() {
   questionElement.textContent = questions[currentQuestionIndex].question
   var answerButton = document.createElement("button")
   answerButton.textContent = questions[currentQuestionIndex].answer[0]
-  answerButton.setAttribute("data-index",0)
+  answerButton.setAttribute("data-index", 0)
   optionsElement.append(answerButton)
   var answerButtonTwo = document.createElement("button")
   answerButtonTwo.textContent = questions[currentQuestionIndex].answer[1]
-  answerButtonTwo.setAttribute("data-index",1)
+  answerButtonTwo.setAttribute("data-index", 1)
   optionsElement.append(answerButtonTwo)
   var answerButtonThree = document.createElement("button")
   answerButtonThree.textContent = questions[currentQuestionIndex].answer[2]
-  answerButtonThree.setAttribute("data-index",2)
+  answerButtonThree.setAttribute("data-index", 2)
   optionsElement.append(answerButtonThree)
   var answerButtonFour = document.createElement("button")
   answerButtonFour.textContent = questions[currentQuestionIndex].answer[3]
-  answerButtonFour.setAttribute("data-index",3)
+  answerButtonFour.setAttribute("data-index", 3)
   optionsElement.append(answerButtonFour)
 }
 
@@ -91,8 +91,8 @@ function startTimer() {
 optionsElement.addEventListener("click", function (event) {
   var clickedElement = event.target
   if (clickedElement.matches("button")) {
-    if (event.target.dataset.index!=questions[currentQuestionIndex].correctIndex) {
-      secondsLeft=secondsLeft-15;
+    if (event.target.dataset.index != questions[currentQuestionIndex].correctIndex) {
+      secondsLeft = secondsLeft - 15;
     }
     currentQuestionIndex++
     if (currentQuestionIndex < questions.length) {
@@ -107,15 +107,26 @@ optionsElement.addEventListener("click", function (event) {
 function endGame() {
   clearInterval(timerInterval);
   console.log("game ended");
-  quizContainer.innerHTML="";
-  updateRemainingSeconds();
+  quizContainer.innerHTML = "";
+  displayForm();
+
+  var timeout = setTimeout("score)", 1000);
+  setInterval(function () {
+    console.log('Time left: ' + secondsLeft + 's');
+  }, 2000);
+  return;
 }
 
-function updateRemainingSeconds() {
-  var elapsedTimeInSeconds = secondsLeft - secondsRemaining;
-  updateRemainingSeconds= totalTimeInSeconds - elapsedTimeInSeconds;
+function displayForm() {
 
-  console.log (updateRemainingSeconds)
 }
+
+// function updateRemainingSeconds() {
+//   var elapsedTimeInSeconds = secondsLeft - secondsRemaining;
+//   updateRemainingSeconds= totalTimeInSeconds - elapsedTimeInSeconds;
+
+//   console.log (updateRemainingSeconds)
+// }
+
 
 
