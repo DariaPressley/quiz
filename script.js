@@ -7,6 +7,7 @@ var instructions = document.querySelector(".instructions");
 var timeEl = document.querySelector(".time");
 var mainEl = document.getElementById("main");
 var formEl = document.getElementById("form");
+var highScore = JSON.parse(localStorage.getItem("highScore")) || []
 
 var questions = [{
   question: "What does API stand for?",
@@ -110,23 +111,27 @@ function endGame() {
   quizContainer.innerHTML = "";
   displayForm();
 
-  var timeout = setTimeout("score)", 1000);
-  setInterval(function () {
-    console.log('Time left: ' + secondsLeft + 's');
-  }, 2000);
-  return;
+ console.log('Time left: ' + secondsLeft + 's');
 }
 
 function displayForm() {
-
+formEl.classList.remove("hide");
 }
 
-// function updateRemainingSeconds() {
-//   var elapsedTimeInSeconds = secondsLeft - secondsRemaining;
-//   updateRemainingSeconds= totalTimeInSeconds - elapsedTimeInSeconds;
+function submitHandler(event) {
+  event.preventDefault();
+  console.log(event.target[0].value);
+  var score = {
+    score: secondsLeft,
+    name: event.target[0].value
+  }
+  highScore.push(score)
+  localStorage.setItem ("highScore",JSON.stringify(highScore))
+  window.location.href="score.html"
+}
 
-//   console.log (updateRemainingSeconds)
-// }
+formEl.addEventListener('submit', submitHandler)
+
 
 
 
